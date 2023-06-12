@@ -19,33 +19,22 @@ VERSAO NUMBER(10) default 0
 
 -- ADD COMMENTS TO THE TABLE
 comment on table ALUNO is 'TABELA DE CADASTRO ALUNO';
-comment on columun ALUNO.COD_ALUNO is 'CÓDIGO DO ALUNO';
-comment on columun ALUNO.NOME_ALUNO is 'NOME COMPLETO DO ALUNO';
-comment on columun ALUNO.DATA_NASCIMENTO is 'DATA DE NASCIMENTO DO ALUNO';
-comment on columun ALUNO.CPF is 'CPF DO ALUNO';
-comment on columun ALUNO.NOME_MAE is 'NOME DA MÃE DO ALUNO';
-comment on columun ALUNO.DATA_INCLUSAO is 'DATA DE INCLUSAO DO ALUNO';
-comment on columun ALUNO.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DO ALUNO';
-comment on columun ALUNO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO ALUNO';
-comment on columun ALUNO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO;
-comment on columun ALUNO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
+comment on column ALUNO.COD_ALUNO is 'CÓDIGO DO ALUNO';
+comment on column ALUNO.NOME_ALUNO is 'NOME COMPLETO DO ALUNO';
+comment on column ALUNO.DATA_NASCIMENTO is 'DATA DE NASCIMENTO DO ALUNO';
+comment on column ALUNO.CPF is 'CPF DO ALUNO';
+comment on column ALUNO.NOME_MAE is 'NOME DA MÃE DO ALUNO';
+comment on column ALUNO.DATA_INCLUSAO is 'DATA DE INCLUSAO DO ALUNO';
+comment on column ALUNO.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DO ALUNO';
+comment on column ALUNO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO ALUNO';
+comment on column ALUNO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO';
+comment on column ALUNO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
 
-alter table ALUNO add constraint IPK_ALUNO primary key (COD_ALUNO)
-using index
-tablespace ALTERNAD4_IND
-pctfree 10
-initrans 2
-maxtrans 255
-storage
-(
-initial 1M
-next 1M
-minextents 1
-maxextents unlimited);
+alter table ALUNO add constraint IPK_ALUNO primary key (COD_ALUNO);
 
 -- GRANTS
-grant select, insert, update, delete on ALUNO to ANALISTAS;
-grant select, insert, update on ALUNO to USUARIOS;
+grant select, insert, update, delete on ALUNO to SYSTEM;
+----grant select, insert, update on ALUNO to USUARIOS;
 
 create table TUTOR
 (
@@ -62,32 +51,21 @@ VERSAO NUMBER(10) default 0
 
 -- ADD COMMENTS TO THE TABLE
 comment on table TUTOR is 'TABELA DE CADASTRO TUTOR';
-comment on columun TUTOR.COD_TUTOR is 'CÓDIGO DO TUTOR';
-comment on columun TUTOR.NOME_TUTOR is 'NOME COMPLETO DO TUTOR';
-comment on columun TUTOR.DATA_NASCIMENTO is 'DATA DE NASCIMENTO DO TUTOR';
-comment on columun TUTOR.CPF is 'CPF DO TUTOR';
-comment on columun TUTOR.DATA_INCLUSAO is 'DATA DE INCLUSAO DO TUTOR';
-comment on columun TUTOR.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DO TUTOR';
-comment on columun TUTOR.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO TUTOR';
-comment on columun TUTOR.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO;
-comment on columun TUTOR.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
+comment on column TUTOR.COD_TUTOR is 'CÓDIGO DO TUTOR';
+comment on column TUTOR.NOME_TUTOR is 'NOME COMPLETO DO TUTOR';
+comment on column TUTOR.DATA_NASCIMENTO is 'DATA DE NASCIMENTO DO TUTOR';
+comment on column TUTOR.CPF is 'CPF DO TUTOR';
+comment on column TUTOR.DATA_INCLUSAO is 'DATA DE INCLUSAO DO TUTOR';
+comment on column TUTOR.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DO TUTOR';
+comment on column TUTOR.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO TUTOR';
+comment on column TUTOR.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO';
+comment on column TUTOR.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
 
-alter table TUTOR add constraint IPK_TUTOR primary key (COD_TUTOR)
-using index
-tablespace ALTERNAD4_IND
-pctfree 10
-initrans 2
-maxtrans 255
-storage
-(
-initial 1M
-next 1M
-minextents 1
-maxextents unlimited);
+alter table TUTOR add constraint IPK_TUTOR primary key (COD_TUTOR);
 
 -- GRANTS
-grant select, insert, update, delete on TUTOR to ANALISTAS;
-grant select, insert, update on TUTOR to USUARIOS;
+grant select, insert, update, delete on TUTOR to SYSTEM;
+--grant select, insert, update on TUTOR to USUARIOS;
 
 create table CURSO
 (
@@ -102,30 +80,19 @@ VERSAO NUMBER(10) default 0
 
 -- ADD COMMENTS TO THE TABLE
 comment on table CURSO is 'TABELA DE CADASTRO CURSO';
-comment on columun CURSO.COD_CURSO is 'CÓDIGO DO CURSO';
-comment on columun CURSO.DESC_CURSO is 'DESCRIÇÃO COMPLETA DO CURSO';
-comment on columun CURSO.DATA_INCLUSAO is 'DATA DE INCLUSAO DO CURSO';
-comment on columun CURSO.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DO CURSO';
-comment on columun CURSO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO CURSO';
-comment on columun CURSO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO;
-comment on columun CURSO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
+comment on column CURSO.COD_CURSO is 'CÓDIGO DO CURSO';
+comment on column CURSO.DESC_CURSO is 'DESCRIÇÃO COMPLETA DO CURSO';
+comment on column CURSO.DATA_INCLUSAO is 'DATA DE INCLUSAO DO CURSO';
+comment on column CURSO.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DO CURSO';
+comment on column CURSO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO CURSO';
+comment on column CURSO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO';
+comment on column CURSO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
 
-alter table CURSO add constraint IPK_CURSO primary key (COD_CURSO)
-using index
-tablespace ALTERNAD4_IND
-pctfree 10
-initrans 2
-maxtrans 255
-storage
-(
-initial 1M
-next 1M
-minextents 1
-maxextents unlimited);
+alter table CURSO add constraint IPK_CURSO primary key (COD_CURSO);
 
 -- GRANTS
-grant select, insert, update, delete on CURSO to ANALISTAS;
-grant select, insert, update on CURSO to USUARIOS;
+grant select, insert, update, delete on CURSO to SYSTEM;
+--grant select, insert, update on CURSO to USUARIOS;
 
 create table DISCIPLINA
 (
@@ -141,31 +108,20 @@ VERSAO NUMBER(10) default 0
 
 -- ADD COMMENTS TO THE TABLE
 comment on table DISCIPLINA is 'TABELA DE CADASTRO DISCIPLINA';
-comment on columun DISCIPLINA.COD_DISCIPLINA is 'CÓDIGO DA DISCIPLINA';
-comment on columun DISCIPLINA.DESC_DISCIPLINA is 'DESCRIÇÃO COMPLETA DA DISCIPLINA';
-comment on columun DISCIPLINA.CH_DISCIPLINA is 'CARGA HORARIA DA  DISCIPLINA';
-comment on columun DISCIPLINA.DATA_INCLUSAO is 'DATA DE INCLUSAO DA DISCIPLINA';
-comment on columun DISCIPLINA.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DA DISCIPLINA';
-comment on columun DISCIPLINA.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DA DISCIPLINA';
-comment on columun DISCIPLINA.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO;
-comment on columun DISCIPLINA.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
+comment on column DISCIPLINA.COD_DISCIPLINA is 'CÓDIGO DA DISCIPLINA';
+comment on column DISCIPLINA.DESC_DISCIPLINA is 'DESCRIÇÃO COMPLETA DA DISCIPLINA';
+comment on column DISCIPLINA.CH_DISCIPLINA is 'CARGA HORARIA DA  DISCIPLINA';
+comment on column DISCIPLINA.DATA_INCLUSAO is 'DATA DE INCLUSAO DA DISCIPLINA';
+comment on column DISCIPLINA.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DA DISCIPLINA';
+comment on column DISCIPLINA.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DA DISCIPLINA';
+comment on column DISCIPLINA.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO';
+comment on column DISCIPLINA.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
 
-alter table DISCIPLINA add constraint IPK_DISCIPLINA primary key (COD_DISCIPLINA)
-using index
-tablespace ALTERNAD4_IND
-pctfree 10
-initrans 2
-maxtrans 255
-storage
-(
-initial 1M
-next 1M
-minextents 1
-maxextents unlimited);
+alter table DISCIPLINA add constraint IPK_DISCIPLINA primary key (COD_DISCIPLINA);
 
 -- GRANTS
-grant select, insert, update, delete on DISCIPLINA to ANALISTAS;
-grant select, insert, update on DISCIPLINA to USUARIOS;
+grant select, insert, update, delete on DISCIPLINA to SYSTEM;
+--grant select, insert, update on DISCIPLINA to USUARIOS;
 
 create table UNIDADE
 (
@@ -180,30 +136,19 @@ VERSAO NUMBER(10) default 0
 
 -- ADD COMMENTS TO THE TABLE
 comment on table UNIDADE is 'TABELA DE CADASTRO UNIDADE';
-comment on columun UNIDADE.COD_UNIDADE is 'CÓDIGO DA UNIDADE';
-comment on columun UNIDADE.DESC_UNIDADE is 'DESCRIÇÃO COMPLETA DA UNIDADE';
-comment on columun UNIDADE.DATA_INCLUSAO is 'DATA DE INCLUSAO DA UNIDADE';
-comment on columun UNIDADE.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DA UNIDADE';
-comment on columun UNIDADE.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DA UNIDADE';
-comment on columun UNIDADE.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO;
-comment on columun UNIDADE.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
+comment on column UNIDADE.COD_UNIDADE is 'CÓDIGO DA UNIDADE';
+comment on column UNIDADE.DESC_UNIDADE is 'DESCRIÇÃO COMPLETA DA UNIDADE';
+comment on column UNIDADE.DATA_INCLUSAO is 'DATA DE INCLUSAO DA UNIDADE';
+comment on column UNIDADE.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DA UNIDADE';
+comment on column UNIDADE.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DA UNIDADE';
+comment on column UNIDADE.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO';
+comment on column UNIDADE.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
 
-alter table UNIDADE add constraint IPK_UNIDADE primary key (COD_UNIDADE)
-using index
-tablespace ALTERNAD4_IND
-pctfree 10
-initrans 2
-maxtrans 255
-storage
-(
-initial 1M
-next 1M
-minextents 1
-maxextents unlimited);
+alter table UNIDADE add constraint IPK_UNIDADE primary key (COD_UNIDADE);
 
 -- GRANTS
-grant select, insert, update, delete on UNIDADE to ANALISTAS;
-grant select, insert, update on UNIDADE to USUARIOS;
+grant select, insert, update, delete on UNIDADE to SYSTEM;
+--grant select, insert, update on UNIDADE to USUARIOS;
 
 create table ESTADO
 (
@@ -216,28 +161,17 @@ VERSAO NUMBER(10) default 0
 
 -- ADD COMMENTS TO THE TABLE
 comment on table ESTADO is 'TABELA DE CADASTRO DO ESTADO';
-comment on columun ESTADO.COD_ESTADO is 'CÓDIGO DO ESTADO';
-comment on columun ESTADO.NOME_ESTADO is 'NOME COMPLETO DO ESTADO';
-comment on columun ESTADO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO ESTADO';
-comment on columun ESTADO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO;
-comment on columun ESTADO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
+comment on column ESTADO.COD_ESTADO is 'CÓDIGO DO ESTADO';
+comment on column ESTADO.DESC_ESTADO is 'NOME COMPLETO DO ESTADO';
+comment on column ESTADO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO ESTADO';
+comment on column ESTADO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO';
+comment on column ESTADO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
 
-alter table ESTADO add constraint IPK_ESTADO primary key (COD_ESTADO)
-using index
-tablespace ALTERNAD4_IND
-pctfree 10
-initrans 2
-maxtrans 255
-storage
-(
-initial 1M
-next 1M
-minextents 1
-maxextents unlimited);
+alter table ESTADO add constraint IPK_ESTADO primary key (COD_ESTADO);
 
 -- GRANTS
-grant select, insert, update, delete on ESTADO to ANALISTAS;
-grant select, insert, update on ESTADO to USUARIOS;
+grant select, insert, update, delete on ESTADO to SYSTEM;
+--grant select, insert, update on ESTADO to USUARIOS;
 
 create table MUNICIPIO
 (
@@ -251,35 +185,24 @@ VERSAO NUMBER(10) default 0
 
 -- ADD COMMENTS TO THE TABLE
 comment on table MUNICIPIO is 'TABELA DE CADASTRO DO MUNICIPIO';
-comment on columun MUNICIPIO.COD_MUNICIPIO is 'CÓDIGO DO MUNICIPIO';
-comment on columun MUNICIPIO.DESC_MUNICIPIO is 'NOME COMPLETO DO MUNICIPIO';
-comment on columun MUNICIPIO.COD_ESTADO is 'CÓDIGO DO ESTADO';
-comment on columun MUNICIPIO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO MUNICIPIO';
-comment on columun MUNICIPIO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO;
-comment on columun MUNICIPIO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
+comment on column MUNICIPIO.COD_MUNICIPIO is 'CÓDIGO DO MUNICIPIO';
+comment on column MUNICIPIO.DESC_MUNICIPIO is 'NOME COMPLETO DO MUNICIPIO';
+comment on column MUNICIPIO.COD_ESTADO is 'CÓDIGO DO ESTADO';
+comment on column MUNICIPIO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO MUNICIPIO';
+comment on column MUNICIPIO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO';
+comment on column MUNICIPIO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
 
-alter table MUNICIPIO add constraint IPK_MUNICIPIO primary key (COD_MUNICIPIO)
-using index
-tablespace ALTERNAD4_IND
-pctfree 10
-initrans 2
-maxtrans 255
-storage
-(
-initial 1M
-next 1M
-minextents 1
-maxextents unlimited);
+alter table MUNICIPIO add constraint IPK_MUNICIPIO primary key (COD_MUNICIPIO);
 
 -- CREATE FK
-alter table MUNICIPIO add constraint FK_ESTADO#MUNICIPIO foreing key (COD_ESTADO) references ESTADO (COD_ESTADO);
+alter table MUNICIPIO add constraint FK_ESTADO#MUNICIPIO FOREIGN KEY (COD_ESTADO) references ESTADO (COD_ESTADO);
 
 --CREATE INDEX
 create index FK_ESTADO#MUNICIPIO on MUNICIPIO (COD_ESTADO);
 
 -- GRANTS
-grant select, insert, update, delete on MUNICIPIO to ANALISTAS;
-grant select, insert, update on MUNICIPIO to USUARIOS;
+grant select, insert, update, delete on MUNICIPIO to SYSTEM;
+--grant select, insert, update on MUNICIPIO to USUARIOS;
 
 create table LOGRADOURO
 (
@@ -294,38 +217,27 @@ VERSAO NUMBER(10) default 0
 
 -- ADD COMMENTS TO THE TABLE
 comment on table LOGRADOURO is 'TABELA DE CADASTRO DO LOGRADOURO';
-comment on columun LOGRADOURO.COD_LOGRADOURO is 'CÓDIGO DO LOGRADOURO';
-comment on columun LOGRADOURO.DESC_LOGRADOURO is 'NOME COMPLETO DO LOGRADOURO';
-comment on columun LOGRADOURO.COD_MUNICIPIO is 'CÓDIGO DO MUNICIPIO';
-comment on columun LOGRADOURO.COD_ESTADO is 'CÓDIGO DO ESTADO';
-comment on columun LOGRADOURO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO LOGRADOURO';
-comment on columun LOGRADOURO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO;
-comment on columun LOGRADOURO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
+comment on column LOGRADOURO.COD_LOGRADOURO is 'CÓDIGO DO LOGRADOURO';
+comment on column LOGRADOURO.DESC_LOGRADOURO is 'NOME COMPLETO DO LOGRADOURO';
+comment on column LOGRADOURO.COD_MUNICIPIO is 'CÓDIGO DO MUNICIPIO';
+comment on column LOGRADOURO.COD_ESTADO is 'CÓDIGO DO ESTADO';
+comment on column LOGRADOURO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO LOGRADOURO';
+comment on column LOGRADOURO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO';
+comment on column LOGRADOURO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
 
-alter table LOGRADOURO add constraint IPK_LOGRADOURO primary key (COD_LOGRADOURO)
-using index
-tablespace ALTERNAD4_IND
-pctfree 10
-initrans 2
-maxtrans 255
-storage
-(
-initial 1M
-next 1M
-minextents 1
-maxextents unlimited);
+alter table LOGRADOURO add constraint IPK_LOGRADOURO primary key (COD_LOGRADOURO);
 
 -- CREATE FK
-alter table LOGRADOURO add constraint FK_ESTADO#LOGRADOURO foreing key (COD_ESTADO) references ESTADO (COD_ESTADO);
-alter table LOGRADOURO add constraint FK_MUNICIPIO#LOGRADOURO foreing key (COD_MUNICIPIO) references MUNICIPIO (COD_MUNICIPIO);
+alter table LOGRADOURO add constraint FK_ESTADO#LOGRADOURO FOREIGN KEY (COD_ESTADO) references ESTADO (COD_ESTADO);
+alter table LOGRADOURO add constraint FK_MUNICIPIO#LOGRADOURO FOREIGN KEY (COD_MUNICIPIO) references MUNICIPIO (COD_MUNICIPIO);
 
 --CREATE INDEX
 create index FK_ESTADO#LOGRADOURO on ESTADO (COD_ESTADO);
 create index FK_MUNICIPIO#LOGRADOURO on MUNICIPIO (COD_MUNICIPIO);
 
 -- GRANTS
-grant select, insert, update, delete on LOGRADOURO to ANALISTAS;
-grant select, insert, update on LOGRADOURO to USUARIOS;
+grant select, insert, update, delete on LOGRADOURO to SYSTEM;
+--grant select, insert, update on LOGRADOURO to USUARIOS;
 
 
 create table BAIRRO
@@ -341,38 +253,27 @@ VERSAO NUMBER(10) default 0
 
 -- ADD COMMENTS TO THE TABLE
 comment on table BAIRRO is 'TABELA DE CADASTRO DO BAIRRO';
-comment on columun BAIRRO.COD_BAIRRO is 'CÓDIGO DO BAIRRO';
-comment on columun BAIRRO.DESC_BAIRRO is 'NOME COMPLETO DO BAIRRO';
-comment on columun BAIRRO.COD_MUNICIPIO is 'CÓDIGO DO MUNICIPIO';
-comment on columun BAIRRO.COD_ESTADO is 'CÓDIGO DO ESTADO';
-comment on columun BAIRRO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO BAIRRO';
-comment on columun BAIRRO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO;
-comment on columun BAIRRO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
+comment on column BAIRRO.COD_BAIRRO is 'CÓDIGO DO BAIRRO';
+comment on column BAIRRO.DESC_BAIRRO is 'NOME COMPLETO DO BAIRRO';
+comment on column BAIRRO.COD_MUNICIPIO is 'CÓDIGO DO MUNICIPIO';
+comment on column BAIRRO.COD_ESTADO is 'CÓDIGO DO ESTADO';
+comment on column BAIRRO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO BAIRRO';
+comment on column BAIRRO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO';
+comment on column BAIRRO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
 
-alter table BAIRRO add constraint IPK_BAIRRO primary key (COD_BAIRRO)
-using index
-tablespace ALTERNAD4_IND
-pctfree 10
-initrans 2
-maxtrans 255
-storage
-(
-initial 1M
-next 1M
-minextents 1
-maxextents unlimited);
+alter table BAIRRO add constraint IPK_BAIRRO primary key (COD_BAIRRO);
 
 -- CREATE FK
-alter table BAIRRO add constraint FK_ESTADO#BAIRRO foreing key (COD_ESTADO) references ESTADO (COD_ESTADO);
-alter table BAIRRO add constraint FK_MUNICIPIO#BAIRRO foreing key (COD_MUNICIPIO) references MUNICIPIO (COD_MUNICIPIO);
+alter table BAIRRO add constraint FK_ESTADO#BAIRRO FOREIGN KEY (COD_ESTADO) references ESTADO (COD_ESTADO);
+alter table BAIRRO add constraint FK_MUNICIPIO#BAIRRO FOREIGN KEY (COD_MUNICIPIO) references MUNICIPIO (COD_MUNICIPIO);
 
 --CREATE INDEX
 create index FK_ESTADO#BAIRRO on ESTADO (COD_ESTADO);
 create index FK_MUNICIPIO#BAIRRO on MUNICIPIO (COD_MUNICIPIO);
 
 -- GRANTS
-grant select, insert, update, delete on BAIRRO to ANALISTAS;
-grant select, insert, update on BAIRRO to USUARIOS;
+grant select, insert, update, delete on BAIRRO to SYSTEM;
+--grant select, insert, update on BAIRRO to USUARIOS;
 
 create table CEPS
 (
@@ -388,33 +289,22 @@ VERSAO NUMBER(10) default 0
 
 -- ADD COMMENTS TO THE TABLE
 comment on table CEPS is 'TABELA DE CADASTRO DO CEPS';
-comment on columun CEPS.CEPS is 'CÓDIGO DO CEPS';
-comment on columun CEPS.COD_LOGRADOURO is 'CÓDIGO DO LOGRADOURO';
-comment on columun CEPS.COD_BAIRRO is 'CÓDIGO DO BAIRRO';
-comment on columun CEPS.COD_MUNICIPIO is 'CÓDIGO DO MUNICIPIO';
-comment on columun CEPS.COD_ESTADO is 'CÓDIGO DO ESTADO';
-comment on columun CEPS.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO REGISTRO';
-comment on columun CEPS.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO;
-comment on columun CEPS.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
+comment on column CEPS.CEP is 'CÓDIGO DO CEPS';
+comment on column CEPS.COD_LOGRADOURO is 'CÓDIGO DO LOGRADOURO';
+comment on column CEPS.COD_BAIRRO is 'CÓDIGO DO BAIRRO';
+comment on column CEPS.COD_MUNICIPIO is 'CÓDIGO DO MUNICIPIO';
+comment on column CEPS.COD_ESTADO is 'CÓDIGO DO ESTADO';
+comment on column CEPS.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO REGISTRO';
+comment on column CEPS.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO';
+comment on column CEPS.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
 
-alter table CEPS add constraint IPK_CEPS primary key (COD_ESTADO,COD_MUNICIPIO,COD_LOGRADOURO, CEP)
-using index
-tablespace ALTERNAD4_IND
-pctfree 10
-initrans 2
-maxtrans 255
-storage
-(
-initial 1M
-next 1M
-minextents 1
-maxextents unlimited);
+alter table CEPS add constraint IPK_CEPS primary key (COD_ESTADO,COD_MUNICIPIO,COD_LOGRADOURO, CEP);
 
 -- CREATE FK
-alter table CEPS add constraint FK_ESTADO#CEPS foreing key (COD_ESTADO) references ESTADO (COD_ESTADO);
-alter table CEPS add constraint FK_MUNICIPIO#CEPS foreing key (COD_MUNICIPIO) references MUNICIPIO (COD_MUNICIPIO);
-alter table CEPS add constraint FK_LOGRADOURO#CEPS foreing key (COD_LOGRADOURO) references MUNICIPIO (COD_LOGRADOURO);
-alter table CEPS add constraint FK_BAIRRO#CEPS foreing key (COD_BAIRRO) references MUNICIPIO (COD_BAIRRO);
+alter table CEPS add constraint FK_ESTADO#CEPS FOREIGN KEY (COD_ESTADO) references ESTADO (COD_ESTADO);
+alter table CEPS add constraint FK_MUNICIPIO#CEPS FOREIGN KEY (COD_MUNICIPIO) references MUNICIPIO (COD_MUNICIPIO);
+alter table CEPS add constraint FK_LOGRADOURO#CEPS FOREIGN KEY (COD_LOGRADOURO) references LOGRADOURO (COD_LOGRADOURO);
+alter table CEPS add constraint FK_BAIRRO#CEPS FOREIGN KEY (COD_BAIRRO) references BAIRRO (COD_BAIRRO);
 
 --CREATE INDEX
 create index FK_ESTADO#CEPS on ESTADO (COD_ESTADO);
@@ -423,8 +313,8 @@ create index FK_LOGRADOURO#CEPS on LOGRADOURO (COD_LOGRADOURO);
 create index FK_BAIRRO#CEPS on BAIRRO (COD_BAIRRO);
 
 -- GRANTS
-grant select, insert, update, delete on CEPS to ANALISTAS;
-grant select, insert, update on CEPS to USUARIOS;
+grant select, insert, update, delete on CEPS to SYSTEM;
+
 
 create table ENDERECO_ALUNO
 (
@@ -445,40 +335,29 @@ VERSAO NUMBER(10) default 0
 
 -- ADD COMMENTS TO THE TABLE
 comment on table ENDERECO_ALUNO is 'TABELA DE CADASTRO DO ENDERECO DO ALUNO';
-comment on columun ENDERECO_ALUNO.COD_ENDERECO_ALUNO is 'CÓDIGO DO ENDERECO DO ALUNO';
-comment on columun ENDERECO_ALUNO.COD_ALUNO is 'CÓDIGO DO ALUNO';
-comment on columun ENDERECO_ALUNO.CEP is 'CEP DO ENDERECO';
-comment on columun ENDERECO_ALUNO.COD_LOGRADOURO is 'CÓDIGO DO ENDERECO_ALUNO';
-comment on columun ENDERECO_ALUNO.COD_BAIRRO is 'CÓDIGO DO BAIRRO';
-comment on columun ENDERECO_ALUNO.COD_MUNICIPIO is 'CÓDIGO DO MUNICIPIO';
-comment on columun ENDERECO_ALUNO.COD_ESTADO is 'CÓDIGO DO ESTADO';
-comment on columun ENDERECO_ALUNO.NUMERO_ENDERECO is 'CÓDIGO DO NUMERO DO ENDERECO';
-comment on columun ENDERECO_ALUNO.COMPLEMENTO_ENDERECO is 'COMPLEMENTO DO ENDERECO';
-comment on columun ENDERECO_ALUNO.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DO ENDERECO DO ALUNO';
-comment on columun ENDERECO_ALUNO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO LOGRADOURO';
-comment on columun ENDERECO_ALUNO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO;
-comment on columun ENDERECO_ALUNO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
+comment on column ENDERECO_ALUNO.COD_ENDERECO_ALUNO is 'CÓDIGO DO ENDERECO DO ALUNO';
+comment on column ENDERECO_ALUNO.COD_ALUNO is 'CÓDIGO DO ALUNO';
+comment on column ENDERECO_ALUNO.CEP is 'CEP DO ENDERECO';
+comment on column ENDERECO_ALUNO.COD_LOGRADOURO is 'CÓDIGO DO ENDERECO_ALUNO';
+comment on column ENDERECO_ALUNO.COD_BAIRRO is 'CÓDIGO DO BAIRRO';
+comment on column ENDERECO_ALUNO.COD_MUNICIPIO is 'CÓDIGO DO MUNICIPIO';
+comment on column ENDERECO_ALUNO.COD_ESTADO is 'CÓDIGO DO ESTADO';
+comment on column ENDERECO_ALUNO.NUMERO_ENDERECO is 'CÓDIGO DO NUMERO DO ENDERECO';
+comment on column ENDERECO_ALUNO.COMPLEMENTO_ENDERECO is 'COMPLEMENTO DO ENDERECO';
+comment on column ENDERECO_ALUNO.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DO ENDERECO DO ALUNO';
+comment on column ENDERECO_ALUNO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO LOGRADOURO';
+comment on column ENDERECO_ALUNO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO';
+comment on column ENDERECO_ALUNO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
 
-alter table ENDERECO_ALUNO add constraint IPK_ENDERECO_ALUNO primary key (COD_ENDERECO_ALUNO)
-using index
-tablespace ALTERNAD4_IND
-pctfree 10
-initrans 2
-maxtrans 255
-storage
-(
-initial 1M
-next 1M
-minextents 1
-maxextents unlimited);
+alter table ENDERECO_ALUNO add constraint IPK_ENDERECO_ALUNO primary key (COD_ENDERECO_ALUNO);
 
 -- CREATE FK
-alter table ENDERECO_ALUNO add constraint FK_ESTADO#ENDERECO_ALUNO foreing key (COD_ESTADO) references ESTADO (COD_ESTADO);
-alter table ENDERECO_ALUNO add constraint FK_MUNICIPIO#ENDERECO_ALUNO foreing key (COD_MUNICIPIO) references MUNICIPIO (COD_MUNICIPIO);
-alter table ENDERECO_ALUNO add constraint FK_LOGRADOURO#ENDERECO_ALUNO foreing key (COD_LOGRADOURO) references MUNICIPIO (COD_LOGRADOURO);
-alter table ENDERECO_ALUNO add constraint FK_BAIRRO#ENDERECO_ALUNO foreing key (COD_BAIRRO) references MUNICIPIO (COD_BAIRRO);
-alter table ENDERECO_ALUNO add constraint FK_CEPS#ENDERECO_ALUNO foreing key (CEP) references CEPS (CEP);
-alter table ENDERECO_ALUNO add constraint FK_ALUNO#ENDERECO_ALUNO foreing key (COD_ALUNO) references ALUNO (COD_ALUNO);
+alter table ENDERECO_ALUNO add constraint FK_ESTADO#ENDERECO_ALUNO FOREIGN KEY (COD_ESTADO) references ESTADO (COD_ESTADO);
+alter table ENDERECO_ALUNO add constraint FK_MUNICIPIO#ENDERECO_ALUNO FOREIGN KEY (COD_MUNICIPIO) references MUNICIPIO (COD_MUNICIPIO);
+alter table ENDERECO_ALUNO add constraint FK_LOGRADOURO#ENDERECO_ALUNO FOREIGN KEY (COD_LOGRADOURO) references LOGRADOURO (COD_LOGRADOURO);
+alter table ENDERECO_ALUNO add constraint FK_BAIRRO#ENDERECO_ALUNO FOREIGN KEY (COD_BAIRRO) references BAIRRO (COD_BAIRRO);
+alter table ENDERECO_ALUNO add constraint FK_CEPS#ENDERECO_ALUNO FOREIGN KEY (CEP) references CEPS (CEP);
+alter table ENDERECO_ALUNO add constraint FK_ALUNO#ENDERECO_ALUNO FOREIGN KEY (COD_ALUNO) references ALUNO (COD_ALUNO);
 
 --CREATE INDEX
 create index FK_ESTADO#ENDERECO_ALUNO on ESTADO (COD_ESTADO);
@@ -489,8 +368,8 @@ create index FK_CEPS#ENDERECO_ALUNO on CEPS (CEP);
 create index FK_ALUNO#ENDERECO_ALUNO on ALUNO (COD_ALUNO);
 
 -- GRANTS
-grant select, insert, update, delete on ENDERECO_ALUNO to ANALISTAS;
-grant select, insert, update on ENDERECO_ALUNO to USUARIOS;
+grant select, insert, update, delete on ENDERECO_ALUNO to SYSTEM;
+--grant select, insert, update on ENDERECO_ALUNO to USUARIOS;
 
 create table ENDERECO_TUTOR
 (
@@ -511,40 +390,29 @@ VERSAO NUMBER(10) default 0
 
 -- ADD COMMENTS TO THE TABLE
 comment on table ENDERECO_TUTOR is 'TABELA DE CADASTRO DO ENDERECO DO TUTOR';
-comment on columun ENDERECO_TUTOR.COD_ENDERECO_TUTOR is 'CÓDIGO DO ENDERECO DO TUTOR';
-comment on columun ENDERECO_TUTOR.COD_TUTOR is 'CÓDIGO DO TUTOR';
-comment on columun ENDERECO_TUTOR.CEP is 'CEP DO ENDERECO';
-comment on columun ENDERECO_TUTOR.COD_LOGRADOURO is 'CÓDIGO DO LOGRADOURO';
-comment on columun ENDERECO_TUTOR.COD_BAIRRO is 'CÓDIGO DO BAIRRO';
-comment on columun ENDERECO_TUTOR.COD_MUNICIPIO is 'CÓDIGO DO MUNICIPIO';
-comment on columun ENDERECO_TUTOR.COD_ESTADO is 'CÓDIGO DO ESTADO';
-comment on columun ENDERECO_TUTOR.NUMERO_ENDERECO is 'CÓDIGO DO NUMERO DO ENDERECO';
-comment on columun ENDERECO_TUTOR.COMPLEMENTO_ENDERECO is 'COMPLEMENTO DO ENDERECO';
-comment on columun ENDERECO_TUTOR.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DO ENDERECO DO TUTOR';
-comment on columun ENDERECO_TUTOR.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO REGISTRO';
-comment on columun ENDERECO_TUTOR.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO;
-comment on columun ENDERECO_TUTOR.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
+comment on column ENDERECO_TUTOR.COD_ENDERECO_TUTOR is 'CÓDIGO DO ENDERECO DO TUTOR';
+comment on column ENDERECO_TUTOR.COD_TUTOR is 'CÓDIGO DO TUTOR';
+comment on column ENDERECO_TUTOR.CEP is 'CEP DO ENDERECO';
+comment on column ENDERECO_TUTOR.COD_LOGRADOURO is 'CÓDIGO DO LOGRADOURO';
+comment on column ENDERECO_TUTOR.COD_BAIRRO is 'CÓDIGO DO BAIRRO';
+comment on column ENDERECO_TUTOR.COD_MUNICIPIO is 'CÓDIGO DO MUNICIPIO';
+comment on column ENDERECO_TUTOR.COD_ESTADO is 'CÓDIGO DO ESTADO';
+comment on column ENDERECO_TUTOR.NUMERO_ENDERECO is 'CÓDIGO DO NUMERO DO ENDERECO';
+comment on column ENDERECO_TUTOR.COMPLEMENTO_ENDERECO is 'COMPLEMENTO DO ENDERECO';
+comment on column ENDERECO_TUTOR.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DO ENDERECO DO TUTOR';
+comment on column ENDERECO_TUTOR.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO REGISTRO';
+comment on column ENDERECO_TUTOR.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO';
+comment on column ENDERECO_TUTOR.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
 
-alter table ENDERECO_TUTOR add constraint IPK_ENDERECO_TUTOR primary key (COD_ENDERECO_TUTOR)
-using index
-tablespace ALTERNAD4_IND
-pctfree 10
-initrans 2
-maxtrans 255
-storage
-(
-initial 1M
-next 1M
-minextents 1
-maxextents unlimited);
+alter table ENDERECO_TUTOR add constraint IPK_ENDERECO_TUTOR primary key (COD_ENDERECO_TUTOR);
 
 -- CREATE FK
-alter table ENDERECO_TUTOR add constraint FK_ESTADO#ENDERECO_TUTOR foreing key (COD_ESTADO) references ESTADO (COD_ESTADO);
-alter table ENDERECO_TUTOR add constraint FK_MUNICIPIO#ENDERECO_TUTOR foreing key (COD_MUNICIPIO) references MUNICIPIO (COD_MUNICIPIO);
-alter table ENDERECO_TUTOR add constraint FK_LOGRADOURO#ENDERECO_TUTOR foreing key (COD_LOGRADOURO) references MUNICIPIO (COD_LOGRADOURO);
-alter table ENDERECO_TUTOR add constraint FK_BAIRRO#ENDERECO_TUTOR foreing key (COD_BAIRRO) references MUNICIPIO (COD_BAIRRO);
-alter table ENDERECO_TUTOR add constraint FK_CEPS#ENDERECO_TUTOR foreing key (CEP) references CEPS (CEP);
-alter table ENDERECO_TUTOR add constraint FK_TUTOR#ENDERECO_TUTOR foreing key (COD_TUTOR) references TUTOR (COD_TUTOR);
+alter table ENDERECO_TUTOR add constraint FK_ESTADO#ENDERECO_TUTOR FOREIGN KEY (COD_ESTADO) references ESTADO (COD_ESTADO);
+alter table ENDERECO_TUTOR add constraint FK_MUNICIPIO#ENDERECO_TUTOR FOREIGN KEY (COD_MUNICIPIO) references MUNICIPIO (COD_MUNICIPIO);
+alter table ENDERECO_TUTOR add constraint FK_LOGRADOURO#ENDERECO_TUTOR FOREIGN KEY (COD_LOGRADOURO) references LOGRADOURO (COD_LOGRADOURO);
+alter table ENDERECO_TUTOR add constraint FK_BAIRRO#ENDERECO_TUTOR FOREIGN KEY (COD_BAIRRO) references BAIRRO (COD_BAIRRO);
+alter table ENDERECO_TUTOR add constraint FK_CEPS#ENDERECO_TUTOR FOREIGN KEY (CEP) references CEPS (CEP);
+alter table ENDERECO_TUTOR add constraint FK_TUTOR#ENDERECO_TUTOR FOREIGN KEY (COD_TUTOR) references TUTOR (COD_TUTOR);
 
 --CREATE INDEX
 create index FK_ESTADO#ENDERECO_TUTOR on ESTADO (COD_ESTADO);
@@ -555,8 +423,8 @@ create index FK_CEPS#ENDERECO_TUTOR on CEPS (CEP);
 create index FK_TUTOR#ENDERECO_TUTOR on TUTOR (COD_TUTOR);
 
 -- GRANTS
-grant select, insert, update, delete on ENDERECO_TUTOR to ANALISTAS;
-grant select, insert, update on ENDERECO_TUTOR to USUARIOS;
+grant select, insert, update, delete on ENDERECO_TUTOR to SYSTEM;
+--grant select, insert, update on ENDERECO_TUTOR to USUARIOS;
 
 create table ENDERECO_UNIDADE
 (
@@ -577,40 +445,29 @@ VERSAO NUMBER(10) default 0
 
 -- ADD COMMENTS TO THE TABLE
 comment on table ENDERECO_UNIDADE is 'TABELA DE CADASTRO DO ENDERECO DA UNIDADE';
-comment on columun ENDERECO_UNIDADE.COD_ENDERECO_UNIDADE is 'CÓDIGO DO ENDERECO DA UNIDADE';
-comment on columun ENDERECO_UNIDADE.COD_UNIDADE is 'CÓDIGO DA UNIDADE';
-comment on columun ENDERECO_UNIDADE.CEP is 'CEP DO ENDERECO';
-comment on columun ENDERECO_UNIDADE.COD_LOGRADOURO is 'CÓDIGO DO LOGRADOURO';
-comment on columun ENDERECO_UNIDADE.COD_BAIRRO is 'CÓDIGO DO BAIRRO';
-comment on columun ENDERECO_UNIDADE.COD_MUNICIPIO is 'CÓDIGO DO MUNICIPIO';
-comment on columun ENDERECO_UNIDADE.COD_ESTADO is 'CÓDIGO DO ESTADO';
-comment on columun ENDERECO_UNIDADE.NUMERO_ENDERECO is 'CÓDIGO DO NUMERO DO ENDERECO';
-comment on columun ENDERECO_UNIDADE.COMPLEMENTO_ENDERECO is 'COMPLEMENTO DO ENDERECO';
-comment on columun ENDERECO_UNIDADE.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DO ENDERECO DO UNIDADE';
-comment on columun ENDERECO_UNIDADE.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO REGISTRO';
-comment on columun ENDERECO_UNIDADE.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO;
-comment on columun ENDERECO_UNIDADE.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
+comment on column ENDERECO_UNIDADE.COD_ENDERECO_UNIDADE is 'CÓDIGO DO ENDERECO DA UNIDADE';
+comment on column ENDERECO_UNIDADE.COD_UNIDADE is 'CÓDIGO DA UNIDADE';
+comment on column ENDERECO_UNIDADE.CEP is 'CEP DO ENDERECO';
+comment on column ENDERECO_UNIDADE.COD_LOGRADOURO is 'CÓDIGO DO LOGRADOURO';
+comment on column ENDERECO_UNIDADE.COD_BAIRRO is 'CÓDIGO DO BAIRRO';
+comment on column ENDERECO_UNIDADE.COD_MUNICIPIO is 'CÓDIGO DO MUNICIPIO';
+comment on column ENDERECO_UNIDADE.COD_ESTADO is 'CÓDIGO DO ESTADO';
+comment on column ENDERECO_UNIDADE.NUMERO_ENDERECO is 'CÓDIGO DO NUMERO DO ENDERECO';
+comment on column ENDERECO_UNIDADE.COMPLEMENTO_ENDERECO is 'COMPLEMENTO DO ENDERECO';
+comment on column ENDERECO_UNIDADE.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DO ENDERECO DO UNIDADE';
+comment on column ENDERECO_UNIDADE.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DO REGISTRO';
+comment on column ENDERECO_UNIDADE.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO';
+comment on column ENDERECO_UNIDADE.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
 
-alter table ENDERECO_UNIDADE add constraint IPK_ENDERECO_UNIDADE primary key (COD_ENDERECO_UNIDADE)
-using index
-tablespace ALTERNAD4_IND
-pctfree 10
-initrans 2
-maxtrans 255
-storage
-(
-initial 1M
-next 1M
-minextents 1
-maxextents unlimited);
+alter table ENDERECO_UNIDADE add constraint IPK_ENDERECO_UNIDADE primary key (COD_ENDERECO_UNIDADE);
 
 -- CREATE FK
-alter table ENDERECO_UNIDADE add constraint FK_ESTADO#ENDERECO_UNIDADE foreing key (COD_ESTADO) references ESTADO (COD_ESTADO);
-alter table ENDERECO_UNIDADE add constraint FK_MUNICIPIO#ENDERECO_UNIDADE foreing key (COD_MUNICIPIO) references MUNICIPIO (COD_MUNICIPIO);
-alter table ENDERECO_UNIDADE add constraint FK_LOGRADOURO#ENDERECO_UNIDADE foreing key (COD_LOGRADOURO) references MUNICIPIO (COD_LOGRADOURO);
-alter table ENDERECO_UNIDADE add constraint FK_BAIRRO#ENDERECO_UNIDADE foreing key (COD_BAIRRO) references MUNICIPIO (COD_BAIRRO);
-alter table ENDERECO_UNIDADE add constraint FK_CEPS#ENDERECO_UNIDADE foreing key (CEP) references CEPS (CEP);
-alter table ENDERECO_UNIDADE add constraint FK_UNIDADE#ENDERECO_UNIDADE foreing key (COD_UNIDADE) references UNIDADE (COD_UNIDADE);
+alter table ENDERECO_UNIDADE add constraint FK_ESTADO#ENDERECO_UNIDADE FOREIGN KEY (COD_ESTADO) references ESTADO (COD_ESTADO);
+alter table ENDERECO_UNIDADE add constraint FK_MUNICIPIO#ENDERECO_UNIDADE FOREIGN KEY (COD_MUNICIPIO) references MUNICIPIO (COD_MUNICIPIO);
+alter table ENDERECO_UNIDADE add constraint FK_LOGRADOURO#ENDERECO_UNIDADE FOREIGN KEY (COD_LOGRADOURO) references MUNICIPIO (COD_LOGRADOURO);
+alter table ENDERECO_UNIDADE add constraint FK_BAIRRO#ENDERECO_UNIDADE FOREIGN KEY (COD_BAIRRO) references MUNICIPIO (COD_BAIRRO);
+alter table ENDERECO_UNIDADE add constraint FK_CEPS#ENDERECO_UNIDADE FOREIGN KEY (CEP) references CEPS (CEP);
+alter table ENDERECO_UNIDADE add constraint FK_UNIDADE#ENDERECO_UNIDADE FOREIGN KEY (COD_UNIDADE) references UNIDADE (COD_UNIDADE);
 
 --CREATE INDEX
 create index FK_ESTADO#ENDERECO_UNIDADE on ESTADO (COD_ESTADO);
@@ -621,8 +478,8 @@ create index FK_CEPS#ENDERECO_UNIDADE on CEPS (CEP);
 create index FK_UNIDADE#ENDERECO_UNIDADE on UNIDADE (COD_UNIDADE);
 
 -- GRANTS
-grant select, insert, update, delete on ENDERECO_UNIDADE to ANALISTAS;
-grant select, insert, update on ENDERECO_UNIDADE to USUARIOS;
+grant select, insert, update, delete on ENDERECO_UNIDADE to SYSTEM;
+--grant select, insert, update on ENDERECO_UNIDADE to USUARIOS;
 
 
 create table HISTORICO_MATRICULA_ALUNO
@@ -639,39 +496,28 @@ VERSAO NUMBER(10) default 0
 
 -- ADD COMMENTS TO THE HISTORICO_MATRICULA_ALUNO
 comment on table HISTORICO_MATRICULA_ALUNO is 'TABELA DE CADASTRO MATRICULA DO ALUNO NA INSTITUIÇÃO';
-comment on columun HISTORICO_MATRICULA_ALUNO.MATRICUAL is 'CÓDIGO DA MATRICULA';
-comment on columun HISTORICO_MATRICULA_ALUNO.DATA_MATRICULA is 'DATA DE CADASTRO DO ALUNO NA INSITUIÇÃO';
-comment on columun HISTORICO_MATRICULA_ALUNO.COD_ALUNO is 'CÓDIGO DO ALUNO';
-comment on columun HISTORICO_MATRICULA_ALUNO.COD_CURSO is 'CÓDIGO DO CURSO';
-comment on columun HISTORICO_MATRICULA_ALUNO.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DA MATRICULA';
-comment on columun HISTORICO_MATRICULA_ALUNO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DA MATRICULA';
-comment on columun HISTORICO_MATRICULA_ALUNO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO;
-comment on columun HISTORICO_MATRICULA_ALUNO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
+comment on column HISTORICO_MATRICULA_ALUNO.MATRICULA is 'CÓDIGO DA MATRICULA';
+comment on column HISTORICO_MATRICULA_ALUNO.DATA_MATRICULA is 'DATA DE CADASTRO DO ALUNO NA INSITUIÇÃO';
+comment on column HISTORICO_MATRICULA_ALUNO.COD_ALUNO is 'CÓDIGO DO ALUNO';
+comment on column HISTORICO_MATRICULA_ALUNO.COD_CURSO is 'CÓDIGO DO CURSO';
+comment on column HISTORICO_MATRICULA_ALUNO.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DA MATRICULA';
+comment on column HISTORICO_MATRICULA_ALUNO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU A INCLUSAO DA MATRICULA';
+comment on column HISTORICO_MATRICULA_ALUNO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO';
+comment on column HISTORICO_MATRICULA_ALUNO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
 
-alter table HISTORICO_MATRICULA_ALUNO add constraint IPK_HISTORICO_MATRICULA_ALUNO primary key (MATRICULA)
-using index
-tablespace ALTERNAD4_IND
-pctfree 10
-initrans 2
-maxtrans 255
-storage
-(
-initial 1M
-next 1M
-minextents 1
-maxextents unlimited);
+alter table HISTORICO_MATRICULA_ALUNO add constraint IPK_HISTORICO_MATRICULA_ALUNO primary key (MATRICULA);
 
 -- CREATE FK
-alter table HISTORICO_MATRICULA_ALUNO add constraint FK_ALUNO#HISTORICO_MATRICULA_ALUNO foreing key (COD_ALUNO) references ALUNO (COD_ALUNO);
-alter table HISTORICO_MATRICULA_ALUNO add constraint FK_CURSO#HISTORICO_MATRICULA_ALUNO foreing key (COD_CURSO) references CURSO (COD_CURSO);
+alter table HISTORICO_MATRICULA_ALUNO add constraint FK_ALUNO#HISTORICO_MATRICULA_ALUNO FOREIGN KEY (COD_ALUNO) references ALUNO (COD_ALUNO);
+alter table HISTORICO_MATRICULA_ALUNO add constraint FK_CURSO#HISTORICO_MATRICULA_ALUNO FOREIGN KEY (COD_CURSO) references CURSO (COD_CURSO);
 
 --CREATE INDEX
 create index FK_ALUNO#HISTORICO_MATRICULA_ALUNO on HISTORICO_MATRICULA_ALUNO (COD_ALUNO);
 create index FK_CURSO#HISTORICO_MATRICULA_ALUNO on HISTORICO_MATRICULA_ALUNO (COD_CURSO);
 
 -- GRANTS
-grant select, insert, update, delete on HISTORICO_MATRICULA_ALUNO to ANALISTAS;
-grant select, insert, update on HISTORICO_MATRICULA_ALUNO to USUARIOS;
+grant select, insert, update, delete on HISTORICO_MATRICULA_ALUNO to SYSTEM;
+--grant select, insert, update on HISTORICO_MATRICULA_ALUNO to USUARIOS;
 
 create table HIST_DISCIPLINAS_CURSO
 (
@@ -685,40 +531,29 @@ DATA_INSERCAO_REGISTO DATE not null,
 VERSAO NUMBER(10) default 0
 );
 -- ADD COMMENTS TO THE HIST_DISCIPLINAS_CURSO
-comment on table HIST_DISCIPLINAS_CURSO is 'TABELA DE CADASTRO HISTÓRICO DE DISCIPLINAS PARA CURSO E UNIDADE;
-comment on columun HIST_DISCIPLINAS_CURSO.COD_HIST_DISCIPLINAS_CURSO is 'CÓDIGO DA TABELA';
-comment on columun HIST_DISCIPLINAS_CURSO.COD_CURSO is 'CÓDIGO DO CURSO';
-comment on columun HIST_DISCIPLINAS_CURSO.COD_DISCIPLINA is 'CÓDIGO DA DISCIPLINA';
-comment on columun HIST_DISCIPLINAS_CURSO.DATA_INCLUSAO is 'DATA DE INCLUSAO DO REGISTRO';
-comment on columun HIST_DISCIPLINAS_CURSO.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DO REGISTRO ';
-comment on columun HIST_DISCIPLINAS_CURSO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU O CADASTRO DO REGISTRO';
-comment on columun HIST_DISCIPLINAS_CURSO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO;
-comment on columun HIST_DISCIPLINAS_CURSO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
+comment on table HIST_DISCIPLINAS_CURSO is 'TABELA DE CADASTRO HISTÓRICO DE DISCIPLINAS PARA CURSO E UNIDADE';
+comment on column HIST_DISCIPLINAS_CURSO.COD_HIST_DISCIPLINAS_CURSO is 'CÓDIGO DA TABELA';
+comment on column HIST_DISCIPLINAS_CURSO.COD_CURSO is 'CÓDIGO DO CURSO';
+comment on column HIST_DISCIPLINAS_CURSO.COD_DISCIPLINA is 'CÓDIGO DA DISCIPLINA';
+comment on column HIST_DISCIPLINAS_CURSO.DATA_INCLUSAO is 'DATA DE INCLUSAO DO REGISTRO';
+comment on column HIST_DISCIPLINAS_CURSO.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DO REGISTRO ';
+comment on column HIST_DISCIPLINAS_CURSO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU O CADASTRO DO REGISTRO';
+comment on column HIST_DISCIPLINAS_CURSO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO';
+comment on column HIST_DISCIPLINAS_CURSO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
 
-alter table HIST_DISCIPLINAS_CURSO add constraint IPK_HIST_DISCIPLINAS_CURSO primary key (COD_HIST_DISCIPLINAS_CURSO)
-using index
-tablespace ALTERNAD4_IND
-pctfree 10
-initrans 2
-maxtrans 255
-storage
-(
-initial 1M
-next 1M
-minextents 1
-maxextents unlimited);
+alter table HIST_DISCIPLINAS_CURSO add constraint IPK_HIST_DISCIPLINAS_CURSO primary key (COD_HIST_DISCIPLINAS_CURSO);
 
 -- CREATE FK
-alter table HIST_DISCIPLINAS_CURSO add constraint FK_CURSO#HIST_DISCIPLINAS_CURSO foreing key (COD_CURSO) references CURSO (COD_CURSO);
-alter table HIST_DISCIPLINAS_CURSO add constraint FK_DISCIPLINA#HIST_DISCIPLINAS_CURSO foreing key (COD_DISCIPLINA) references DISCIPLINA (COD_DISCIPLINA);
+alter table HIST_DISCIPLINAS_CURSO add constraint FK_CURSO#HIST_DISCIPLINAS_CURSO FOREIGN KEY (COD_CURSO) references CURSO (COD_CURSO);
+alter table HIST_DISCIPLINAS_CURSO add constraint FK_DISCIPLINA#HIST_DISCIPLINAS_CURSO FOREIGN KEY (COD_DISCIPLINA) references DISCIPLINA (COD_DISCIPLINA);
 
 --CREATE INDEX
 create index FK_CURSO#HIST_DISCIPLINAS_CURSO on CURSO (COD_CURSO);
 create index FK_DISCIPLINASO#HIST_DISCIPLINAS_CURSO on DISCIPLINA (COD_DISCIPLINA);
 
 -- GRANTS
-grant select, insert, update, delete on HIST_DISCIPLINAS_CURSO to ANALISTAS;
-grant select, insert, update on HIST_DISCIPLINAS_CURSO to USUARIOS;
+grant select, insert, update, delete on HIST_DISCIPLINAS_CURSO to SYSTEM;
+--grant select, insert, update on HIST_DISCIPLINAS_CURSO to USUARIOS;
 
 create table HIST_CURSO_UNIDADE
 (
@@ -732,40 +567,29 @@ DATA_INSERCAO_REGISTO DATE not null,
 VERSAO NUMBER(10) default 0
 );
 -- ADD COMMENTS TO THE HIST_CURSO_UNIDADE
-comment on table HIST_CURSO_UNIDADE is 'TABELA DE CADASTRO HISTÓRICO DE CURSO E UNIDADE;
-comment on columun HIST_CURSO_UNIDADE.COD_HIST_CURSO_UNIDADE is 'CÓDIGO DA TABELA';
-comment on columun HIST_CURSO_UNIDADE.COD_CURSO is 'CÓDIGO DO CURSO';
-comment on columun HIST_CURSO_UNIDADE.COD_UNIDADE is 'CÓDIGO DA UNIDADE';
-comment on columun HIST_CURSO_UNIDADE.DATA_INCLUSAO is 'DATA DE INCLUSAO DO REGISTRO';
-comment on columun HIST_CURSO_UNIDADE.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DO REGISTRO ';
-comment on columun HIST_CURSO_UNIDADE.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU O CADASTRO DO REGISTRO';
-comment on columun HIST_CURSO_UNIDADE.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO;
-comment on columun HIST_CURSO_UNIDADE.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
+comment on table HIST_CURSO_UNIDADE is 'TABELA DE CADASTRO HISTÓRICO DE CURSO E UNIDADE';
+comment on column HIST_CURSO_UNIDADE.COD_HIST_CURSO_UNIDADE is 'CÓDIGO DA TABELA';
+comment on column HIST_CURSO_UNIDADE.COD_CURSO is 'CÓDIGO DO CURSO';
+comment on column HIST_CURSO_UNIDADE.COD_UNIDADE is 'CÓDIGO DA UNIDADE';
+comment on column HIST_CURSO_UNIDADE.DATA_INCLUSAO is 'DATA DE INCLUSAO DO REGISTRO';
+comment on column HIST_CURSO_UNIDADE.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DO REGISTRO ';
+comment on column HIST_CURSO_UNIDADE.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU O CADASTRO DO REGISTRO';
+comment on column HIST_CURSO_UNIDADE.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO';
+comment on column HIST_CURSO_UNIDADE.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
 
-alter table HIST_CURSO_UNIDADE add constraint IPK_HIST_CURSO_UNIDADE primary key (COD_HIST_CURSO_UNIDADE)
-using index
-tablespace ALTERNAD4_IND
-pctfree 10
-initrans 2
-maxtrans 255
-storage
-(
-initial 1M
-next 1M
-minextents 1
-maxextents unlimited);
+alter table HIST_CURSO_UNIDADE add constraint IPK_HIST_CURSO_UNIDADE primary key (COD_HIST_CURSO_UNIDADE);
 
 -- CREATE FK
-alter table HIST_CURSO_UNIDADE add constraint FK_CURSO#HIST_CURSO_UNIDADE foreing key (COD_CURSO) references CURSO (COD_CURSO);
-alter table HIST_CURSO_UNIDADE add constraint FK_UNIDADE#HIST_CURSO_UNIDADE foreing key (COD_UNIDADE) references UNIDADE (COD_UNIDADE);
+alter table HIST_CURSO_UNIDADE add constraint FK_CURSO#HIST_CURSO_UNIDADE FOREIGN KEY (COD_CURSO) references CURSO (COD_CURSO);
+alter table HIST_CURSO_UNIDADE add constraint FK_UNIDADE#HIST_CURSO_UNIDADE FOREIGN KEY (COD_UNIDADE) references UNIDADE (COD_UNIDADE);
 
 --CREATE INDEX
 create index FK_CURSO#HIST_CURSO_UNIDADE on CURSO (COD_CURSO);
 create index FK_UNIDADE#HIST_CURSO_UNIDADE on UNIDADE (COD_UNIDADE);
 
 -- GRANTS
-grant select, insert, update, delete on HIST_CURSO_UNIDADE to ANALISTAS;
-grant select, insert, update on HIST_CURSO_UNIDADE to USUARIOS;
+grant select, insert, update, delete on HIST_CURSO_UNIDADE to SYSTEM;
+--grant select, insert, update on HIST_CURSO_UNIDADE to USUARIOS;
 
 create table HIST_TUTOR_DISCIPLINAS_CURSO
 (
@@ -780,43 +604,32 @@ DATA_INSERCAO_REGISTO DATE not null,
 VERSAO NUMBER(10) default 0
 );
 -- ADD COMMENTS TO THE HIST_TUTOR_DISCIPLINAS_CURSO
-comment on table HIST_TUTOR_DISCIPLINAS_CURSO is 'TABELA DE CADASTRO HISTÓRICO DE DISCIPLINAS PARA O TUTOR;
-comment on columun HIST_TUTOR_DISCIPLINAS_CURSO.COD_HIST_TUTOR_DISCIP_CURSO is 'CÓDIGO DA TABELA';
-comment on columun HIST_TUTOR_DISCIPLINAS_CURSO.COD_HIST_DISCIPLINAS_CURSO is 'CÓDIGO DO HISTORICO DA DISCIPLINAS VINCULADA AO CURSO';
-comment on columun HIST_CURSO_UNIDADE.COD_HIST_CURSO_UNIDADE is 'CÓDIGO DA TABELA';
-comment on columun HIST_TUTOR_DISCIPLINAS_CURSO.COD_TUTOR is 'CÓDIGO DO TUTOR';
-comment on columun HIST_TUTOR_DISCIPLINAS_CURSO.DATA_INCLUSAO is 'DATA DE INCLUSAO DO REGISTRO';
-comment on columun HIST_TUTOR_DISCIPLINAS_CURSO.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DO REGISTRO ';
-comment on columun HIST_TUTOR_DISCIPLINAS_CURSO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU O CADASTRO DO REGISTRO';
-comment on columun HIST_TUTOR_DISCIPLINAS_CURSO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO;
-comment on columun HIST_TUTOR_DISCIPLINAS_CURSO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
+comment on table HIST_TUTOR_DISCIPLINAS_CURSO is 'TABELA DE CADASTRO HISTÓRICO DE DISCIPLINAS PARA O TUTOR';
+comment on column HIST_TUTOR_DISCIPLINAS_CURSO.COD_HIST_TUTOR_DISCIP_CURSO is 'CÓDIGO DA TABELA';
+comment on column HIST_TUTOR_DISCIPLINAS_CURSO.COD_HIST_DISCIPLINAS_CURSO is 'CÓDIGO DO HISTORICO DA DISCIPLINAS VINCULADA AO CURSO';
+comment on column HIST_CURSO_UNIDADE.COD_HIST_CURSO_UNIDADE is 'CÓDIGO DA TABELA';
+comment on column HIST_TUTOR_DISCIPLINAS_CURSO.COD_TUTOR is 'CÓDIGO DO TUTOR';
+comment on column HIST_TUTOR_DISCIPLINAS_CURSO.DATA_INCLUSAO is 'DATA DE INCLUSAO DO REGISTRO';
+comment on column HIST_TUTOR_DISCIPLINAS_CURSO.DATA_EXCLUSAO is 'DATA DE EXCLUSAO DO REGISTRO';
+comment on column HIST_TUTOR_DISCIPLINAS_CURSO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU O CADASTRO DO REGISTRO';
+comment on column HIST_TUTOR_DISCIPLINAS_CURSO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO';
+comment on column HIST_TUTOR_DISCIPLINAS_CURSO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
 
-alter table HIST_TUTOR_DISCIPLINAS_CURSO add constraint IPK_HIST_TUTOR_DISCIPLINAS_CURSO primary key (COD_HIST_TUTOR_DISCIP_CURSO)
-using index
-tablespace ALTERNAD4_IND
-pctfree 10
-initrans 2
-maxtrans 255
-storage
-(
-initial 1M
-next 1M
-minextents 1
-maxextents unlimited);
+alter table HIST_TUTOR_DISCIPLINAS_CURSO add constraint IPK_HIST_TUTOR_DISCIPLINAS_CURSO primary key (COD_HIST_TUTOR_DISCIP_CURSO);
 
 -- CREATE FK
-alter table HIST_TUTOR_DISCIPLINAS_CURSO add constraint FK_HIST_DISCIPLINAS_CURSO#HIST_TUTOR_DISCIPLINAS_CURSO foreing key (COD_HIST_DISCIPLINAS_CURSO) references HIST_DISCIPLINAS_CURSO (COD_HIST_DISCIPLINAS_CURSO);
-alter table HIST_TUTOR_DISCIPLINAS_CURSO add constraint FK_TUTOR#HIST_TUTOR_DISCIPLINAS_CURSO foreing key (COD_TUTOR) references TUTOR (COD_TUTOR);
-alter table HIST_TUTOR_DISCIPLINAS_CURSO add constraint FK_HIST_CURSO_UNIDADE#HIST_TUTOR_DISCIPLINAS_CURSO foreing key (COD_HIST_CURSO_UNIDADE) references HIST_CURSO_UNIDADE (COD_HIST_CURSO_UNIDADE);
+alter table HIST_TUTOR_DISCIPLINAS_CURSO add constraint FK_HIST_DISCIPLINAS_CURSO#HIST_TUTOR_DISCIPLINAS_CURSO FOREIGN KEY (COD_HIST_DISCIPLINAS_CURSO) references HIST_DISCIPLINAS_CURSO (COD_HIST_DISCIPLINAS_CURSO);
+alter table HIST_TUTOR_DISCIPLINAS_CURSO add constraint FK_TUTOR#HIST_TUTOR_DISCIPLINAS_CURSO FOREIGN KEY (COD_TUTOR) references TUTOR (COD_TUTOR);
+alter table HIST_TUTOR_DISCIPLINAS_CURSO add constraint FK_HIST_CURSO_UNIDADE#HIST_TUTOR_DISCIPLINAS_CURSO FOREIGN KEY (COD_HIST_CURSO_UNIDADE) references HIST_CURSO_UNIDADE (COD_HIST_CURSO_UNIDADE);
 
 --CREATE INDEX
 create index FK_HIST_DISCIPLINAS_CURSO#HIST_TUTOR_DISCIPLINAS_CURSO on CURSO (COD_HIST_DISCIPLINAS_CURSO);
-create index FK_TUTOR#HIST_TUTOR_DISCIPLINAS_CURSO on DISCIPLINA (COD_TUTOR);
-create index FK_HIST_TUTOR_DISCIPLINAS_CURSO#HIST_TUTOR_DISCIPLINAS_CURSO on DISCIPLINA (COD_HIST_CURSO_UNIDADE);
+create index FK_TUTOR#HIST_TUTOR_DISCIPLINAS_CURSO on TUTOR (COD_TUTOR);
+create index FK_HIST_TUTOR_DISCIPLINAS_CURSO#HIST_TUTOR_DISCIPLINAS_CURSO on DISCIPLINAS (COD_HIST_CURSO_UNIDADE);
 
 -- GRANTS
-grant select, insert, update, delete on HIST_TUTOR_DISCIPLINAS_CURSO to ANALISTAS;
-grant select, insert, update on HIST_TUTOR_DISCIPLINAS_CURSO to USUARIOS;
+grant select, insert, update, delete on HIST_TUTOR_DISCIPLINAS_CURSO to SYSTEM;
+--grant select, insert, update on HIST_TUTOR_DISCIPLINAS_CURSO to USUARIOS;
 
 
 create table HIST_MATRICULA_ALUNO_DISCIPL_CURSO
@@ -833,33 +646,22 @@ VERSAO NUMBER(10) default 0
 );
 -- ADD COMMENTS TO THE HIST_MATRICULA_ALUNO_DISCIPL_CURSO
 comment on table HIST_MATRICULA_ALUNO_DISCIPL_CURSO is 'TABELA DE CADASTRO HISTÓRICO DE MATRICULAS QUE O ALUNO CURSA/CURSOU';
-comment on columun HIST_MATRICULA_ALUNO_DISCIPL_CURSO.COD_HIST_MAT_ALUNO_DISCIPL_CURSO is 'CÓDIGO DA TABELA';
-comment on columun HIST_MATRICULA_ALUNO_DISCIPL_CURSO.MATRICULA is 'CÓDIGO DA MATRICULA DO ALUNO';
-comment on columun HIST_MATRICULA_ALUNO_DISCIPL_CURSO.COD_HIST_DISCIPLINAS_CURSO is 'CÓDIGO DAS DISCIPLINAS VINCULAS AO CURSO';
-comment on columun HIST_MATRICULA_ALUNO_DISCIPL_CURSO.COD_HIST_CURSO_UNIDADE is 'CÓDIGO DO HISTÓRICO DO UNIDADE DO CURSO';
-comment on columun HIST_MATRICULA_ALUNO_DISCIPL_CURSO.DATA_INCLUSAO is 'DATA DE INCLUSAO DO ALUNO';
-comment on columun HIST_MATRICULA_ALUNO_DISCIPL_CURSO.DATA_EXCLUSAO is 'DATA DE EXCLUSAO ';
-comment on columun HIST_MATRICULA_ALUNO_DISCIPL_CURSO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU O CADASTRO DO REGISTRO';
-comment on columun HIST_MATRICULA_ALUNO_DISCIPL_CURSO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO;
-comment on columun HIST_MATRICULA_ALUNO_DISCIPL_CURSO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
+comment on column HIST_MATRICULA_ALUNO_DISCIPL_CURSO.COD_HIST_MAT_ALUNO_DISCIPL_CURSO is 'CÓDIGO DA TABELA';
+comment on column HIST_MATRICULA_ALUNO_DISCIPL_CURSO.MATRICULA is 'CÓDIGO DA MATRICULA DO ALUNO';
+comment on column HIST_MATRICULA_ALUNO_DISCIPL_CURSO.COD_HIST_DISCIPLINAS_CURSO is 'CÓDIGO DAS DISCIPLINAS VINCULAS AO CURSO';
+comment on column HIST_MATRICULA_ALUNO_DISCIPL_CURSO.COD_HIST_CURSO_UNIDADE is 'CÓDIGO DO HISTÓRICO DO UNIDADE DO CURSO';
+comment on column HIST_MATRICULA_ALUNO_DISCIPL_CURSO.DATA_INCLUSAO is 'DATA DE INCLUSAO DO ALUNO';
+comment on column HIST_MATRICULA_ALUNO_DISCIPL_CURSO.DATA_EXCLUSAO is 'DATA DE EXCLUSAO ';
+comment on column HIST_MATRICULA_ALUNO_DISCIPL_CURSO.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU O CADASTRO DO REGISTRO';
+comment on column HIST_MATRICULA_ALUNO_DISCIPL_CURSO.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO';
+comment on column HIST_MATRICULA_ALUNO_DISCIPL_CURSO.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
 
-alter table HIST_MATRICULA_ALUNO_DISCIPL_CURSO add constraint IPK_HIST_MATRICULA_ALUNO_DISCIPL_CURSO primary key (COD_HIST_MAT_ALUNO_DISCIPL_CURSO)
-using index
-tablespace ALTERNAD4_IND
-pctfree 10
-initrans 2
-maxtrans 255
-storage
-(
-initial 1M
-next 1M
-minextents 1
-maxextents unlimited);
+alter table HIST_MATRICULA_ALUNO_DISCIPL_CURSO add constraint IPK_HIST_MATRICULA_ALUNO_DISCIPL_CURSO primary key (COD_HIST_MAT_ALUNO_DISCIPL_CURSO);
 
 -- CREATE FK
-alter table HIST_MATRICULA_ALUNO_DISCIPL_CURSO add constraint FK_MATRICULA#HIST_MATRICULA_ALUNO_DISCIPL_CURSO foreing key (MATRICULA) references HISTORICO_MATRICULA_ALUNO (MATRICULA);
-alter table HIST_MATRICULA_ALUNO_DISCIPL_CURSO add constraint FK_HIST_DISCIPLINAS_CURSO#HIST_MATRICULA_ALUNO_DISCIPL_CURSO foreing key (COD_HIST_DISCIPLINAS_CURSO) references HISTORICO_MATRICULA_ALUNO (COD_HIST_DISCIPLINAS_CURSO);
-alter table HIST_MATRICULA_ALUNO_DISCIPL_CURSO add constraint FK_HIST_CURSO_UNIDADE#HIST_MATRICULA_ALUNO_DISCIPL_CURSO foreing key (COD_HIST_CURSO_UNIDADE) references HIST_TUTOR_DISCIPLINAS_CURSO (COD_HIST_CURSO_UNIDADE);
+alter table HIST_MATRICULA_ALUNO_DISCIPL_CURSO add constraint FK_MATRICULA#HIST_MATRICULA_ALUNO_DISCIPL_CURSO FOREIGN KEY (MATRICULA) references HISTORICO_MATRICULA_ALUNO (MATRICULA);
+--**alter table HIST_MATRICULA_ALUNO_DISCIPL_CURSO add constraint FK_HIST_DISCIPLINAS_CURSO#HIST_MATRICULA_ALUNO_DISCIPL_CURSO FOREIGN KEY (COD_HIST_DISCIPLINAS_CURSO) references HISTORICO_MATRICULA_ALUNO (COD_HIST_DISCIPLINAS_CURSO);
+alter table HIST_MATRICULA_ALUNO_DISCIPL_CURSO add constraint FK_HIST_CURSO_UNIDADE#HIST_MATRICULA_ALUNO_DISCIPL_CURSO FOREIGN KEY (COD_HIST_CURSO_UNIDADE) references HIST_TUTOR_DISCIPLINAS_CURSO (COD_HIST_CURSO_UNIDADE);
 
 --CREATE INDEX
 create index FK_HISTORICO_MATRICULA_ALUNO#HIST_MATRICULA_ALUNO_DISCIPL_CURSO on HIST_MATRICULA_ALUNO_DISCIPL_CURSO (MATRICULA);
@@ -867,8 +669,8 @@ create index FK_HIST_DISCIPLINAS_CURSO#HIST_MATRICULA_ALUNO_DISCIPL_CURSO on HIS
 create index FK_HIST_CURSO_UNIDADE#HIST_MATRICULA_ALUNO_DISCIPL_CURSO on HIST_CURSO_UNIDADE (COD_HIST_CURSO_UNIDADE);
 
 -- GRANTS
-grant select, insert, update, delete on HIST_MATRICULA_ALUNO_DISCIPL_CURSO to ANALISTAS;
-grant select, insert, update on HIST_MATRICULA_ALUNO_DISCIPL_CURSO to USUARIOS;
+grant select, insert, update, delete on HIST_MATRICULA_ALUNO_DISCIPL_CURSO to SYSTEM;
+--grant select, insert, update on HIST_MATRICULA_ALUNO_DISCIPL_CURSO to USUARIOS;
 
 
 create table HIST_ALUNO_DISCIPL_CURSO_TUTOR
@@ -886,35 +688,24 @@ VERSAO NUMBER(10) default 0
 );
 -- ADD COMMENTS TO THE HIST_ALUNO_DISCIPL_CURSO_TUTOR
 comment on table HIST_ALUNO_DISCIPL_CURSO_TUTOR is 'TABELA DE CADASTRO HISTÓRICO DE MATRICULAS QUE O ALUNO ESTÁ COM O TUTOR';
-comment on columun HIST_ALUNO_DISCIPL_CURSO_TUTOR.COD_HIST_ALUNO_DISCIPL_CURSO_TUTOR is 'CÓDIGO DA TABELA';
-comment on columun HIST_ALUNO_DISCIPL_CURSO_TUTOR.MATRICULA is 'CÓDIGO DA MATRICULA DO ALUNO';
-comment on columun HIST_ALUNO_DISCIPL_CURSO_TUTOR.COD_HIST_DISCIPLINAS_CURSO is 'CÓDIGO DAS DISCIPLINAS VINCULAS AO CURSO';
-comment on columun HIST_ALUNO_DISCIPL_CURSO_TUTOR.COD_HIST_TUTOR_DISCIP_CURSO is 'CÓDIGO DO HISTÓRICO DO TUTOR DAS DISCIPLINAS';
-comment on columun HIST_ALUNO_DISCIPL_CURSO_TUTOR.COD_HIST_CURSO_UNIDADE is 'CÓDIGO DO HISTÓRICO DO UNIDADE DO CURSO';
-comment on columun HIST_ALUNO_DISCIPL_CURSO_TUTOR.DATA_INCLUSAO is 'DATA DE INCLUSAO DO ALUNO';
-comment on columun HIST_ALUNO_DISCIPL_CURSO_TUTOR.DATA_EXCLUSAO is 'DATA DE EXCLUSAO ';
-comment on columun HIST_ALUNO_DISCIPL_CURSO_TUTOR.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU O CADASTRO DO REGISTRO';
-comment on columun HIST_ALUNO_DISCIPL_CURSO_TUTOR.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO;
-comment on columun HIST_ALUNO_DISCIPL_CURSO_TUTOR.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
+comment on column HIST_ALUNO_DISCIPL_CURSO_TUTOR.COD_HIST_ALUNO_DISCIPL_CURSO_TUTOR is 'CÓDIGO DA TABELA';
+comment on column HIST_ALUNO_DISCIPL_CURSO_TUTOR.MATRICULA is 'CÓDIGO DA MATRICULA DO ALUNO';
+comment on column HIST_ALUNO_DISCIPL_CURSO_TUTOR.COD_HIST_DISCIPLINAS_CURSO is 'CÓDIGO DAS DISCIPLINAS VINCULAS AO CURSO';
+comment on column HIST_ALUNO_DISCIPL_CURSO_TUTOR.COD_HIST_TUTOR_DISCIP_CURSO is 'CÓDIGO DO HISTÓRICO DO TUTOR DAS DISCIPLINAS';
+comment on column HIST_ALUNO_DISCIPL_CURSO_TUTOR.COD_HIST_CURSO_UNIDADE is 'CÓDIGO DO HISTÓRICO DO UNIDADE DO CURSO';
+comment on column HIST_ALUNO_DISCIPL_CURSO_TUTOR.DATA_INCLUSAO is 'DATA DE INCLUSAO DO ALUNO';
+comment on column HIST_ALUNO_DISCIPL_CURSO_TUTOR.DATA_EXCLUSAO is 'DATA DE EXCLUSAO ';
+comment on column HIST_ALUNO_DISCIPL_CURSO_TUTOR.USUARIO_INSERCAO_REGISTRO is 'USUARIO QUE REALIZOU O CADASTRO DO REGISTRO';
+comment on column HIST_ALUNO_DISCIPL_CURSO_TUTOR.DATA_INSERCAO_REGISTO is 'DATA QUE O REGISTRO FOI INSERIDO';
+comment on column HIST_ALUNO_DISCIPL_CURSO_TUTOR.VERSAO is 'VERSÃO DE ALTERAÇÕES DO REGISTRO';
 
-alter table HIST_ALUNO_DISCIPL_CURSO_TUTOR add constraint IPK_HIST_ALUNO_DISCIPL_CURSO_TUTOR primary key (COD_HIST_ALUNO_DISCIPL_CURSO_TUTOR)
-using index
-tablespace ALTERNAD4_IND
-pctfree 10
-initrans 2
-maxtrans 255
-storage
-(
-initial 1M
-next 1M
-minextents 1
-maxextents unlimited);
+alter table HIST_ALUNO_DISCIPL_CURSO_TUTOR add constraint IPK_HIST_ALUNO_DISCIPL_CURSO_TUTOR primary key (COD_HIST_ALUNO_DISCIPL_CURSO_TUTOR);
 
 -- CREATE FK
-alter table HIST_ALUNO_DISCIPL_CURSO_TUTOR add constraint FK_MATRICULA#HIST_ALUNO_DISCIPL_CURSO_TUTOR foreing key (MATRICULA) references HISTORICO_MATRICULA_ALUNO (MATRICULA);
-alter table HIST_ALUNO_DISCIPL_CURSO_TUTOR add constraint FK_HIST_DISCIPLINAS_CURSO#HIST_ALUNO_DISCIPL_CURSO_TUTOR foreing key (COD_HIST_DISCIPLINAS_CURSO) references HISTORICO_MATRICULA_ALUNO (COD_HIST_DISCIPLINAS_CURSO);
-alter table HIST_ALUNO_DISCIPL_CURSO_TUTOR add constraint FK_HIST_TUTOR_DISCIPLINAS_CURSO#HIST_ALUNO_DISCIPL_CURSO_TUTOR foreing key (COD_HIST_TUTOR_DISCIP_CURSO) references HIST_TUTOR_DISCIPLINAS_CURSO (COD_HIST_TUTOR_DISCIP_CURSO);
-alter table HIST_ALUNO_DISCIPL_CURSO_TUTOR add constraint FK_HIST_CURSO_UNIDADE#HIST_ALUNO_DISCIPL_CURSO_TUTOR foreing key (COD_HIST_CURSO_UNIDADE) references HIST_TUTOR_DISCIPLINAS_CURSO (COD_HIST_CURSO_UNIDADE);
+alter table HIST_ALUNO_DISCIPL_CURSO_TUTOR add constraint FK_MATRICULA#HIST_ALUNO_DISCIPL_CURSO_TUTOR FOREIGN KEY (MATRICULA) references HISTORICO_MATRICULA_ALUNO (MATRICULA);
+alter table HIST_ALUNO_DISCIPL_CURSO_TUTOR add constraint FK_HIST_DISCIPLINAS_CURSO#HIST_ALUNO_DISCIPL_CURSO_TUTOR FOREIGN KEY (COD_HIST_DISCIPLINAS_CURSO) references HISTORICO_MATRICULA_ALUNO (COD_HIST_DISCIPLINAS_CURSO);
+alter table HIST_ALUNO_DISCIPL_CURSO_TUTOR add constraint FK_HIST_TUTOR_DISCIPLINAS_CURSO#HIST_ALUNO_DISCIPL_CURSO_TUTOR FOREIGN KEY (COD_HIST_TUTOR_DISCIP_CURSO) references HIST_TUTOR_DISCIPLINAS_CURSO (COD_HIST_TUTOR_DISCIP_CURSO);
+--**alter table HIST_ALUNO_DISCIPL_CURSO_TUTOR add constraint FK_HIST_CURSO_UNIDADE#HIST_ALUNO_DISCIPL_CURSO_TUTOR FOREIGN KEY (COD_HIST_CURSO_UNIDADE) references HIST_TUTOR_DISCIPLINAS_CURSO (COD_HIST_CURSO_UNIDADE);
 
 --CREATE INDEX
 create index FK_HISTORICO_MATRICULA_ALUNO#HIST_ALUNO_DISCIPL_CURSO_TUTOR on HIST_ALUNO_DISCIPL_CURSO_TUTOR (MATRICULA);
@@ -923,14 +714,14 @@ create index FK_HIST_TUTOR_DISCIPLINAS_CURSO#HIST_ALUNO_DISCIPL_CURSO_TUTOR on H
 create index FK_HIST_CURSO_UNIDADE#HIST_ALUNO_DISCIPL_CURSO_TUTOR on HIST_CURSO_UNIDADE (COD_HIST_CURSO_UNIDADE);
 
 -- GRANTS
-grant select, insert, update, delete on HIST_ALUNO_DISCIPL_CURSO_TUTOR to ANALISTAS;
-grant select, insert, update on HIST_ALUNO_DISCIPL_CURSO_TUTOR to USUARIOS;
+grant select, insert, update, delete on HIST_ALUNO_DISCIPL_CURSO_TUTOR to SYSTEM;
+--grant select, insert, update on HIST_ALUNO_DISCIPL_CURSO_TUTOR to USUARIOS;
 
 
 
 CREATE OR REPLACE VIEW LISTA_CURSOS_DISPONIVEIS AS
-SELECT A.COD_CURSO, A.DESC_CURSO, HCU.COD_UNIDADE
-FROM ALUNO A, ENDERECO_ALUNO EA, ENDERECO_UNIDADE EU, HIST_CURSO_UNIDADE HCU, CURSOS C
+SELECT C.COD_CURSO, C.DESC_CURSO, HCU.COD_UNIDADE
+FROM ALUNO A, ENDERECO_ALUNO EA, ENDERECO_UNIDADE EU, HIST_CURSO_UNIDADE HCU, CURSO C
 WHERE 
 A.COD_ALUNO = EA.COD_ALUNO
 AND EU.COD_MUNICIPIO  = EA.COD_MUNICIPIO
@@ -938,12 +729,13 @@ AND EU.COD_ESTADO  = EA.COD_ESTADO
 AND HCU.COD_UNIDADE  = EU.COD_UNIDADE
 AND (HCU.DATA_EXCLUSAO IS NULL OR  HCU.DATA_EXCLUSAO > SYSDATE)
 AND C.COD_CURSO = HCU.COD_CURSO
-ORDER BY A.DESC_CURSO;
+ORDER BY C.DESC_CURSO;
 
 CREATE OR REPLACE VIEW LISTAR_ALUNOS_TUTORIA
 AS
-SELECT A.COD_ALUNO,A.NOME_ALUNO, HMA.MATRICULA, HMA.COD_CURSO  FROM 
-ALUNO A, MATRICULA M,
+SELECT A.COD_ALUNO,A.NOME_ALUNO, HMA.MATRICULA FROM 
+ALUNO A, 
+HISTORICO_MATRICULA_ALUNO M, 
 ENDERECO_ALUNO EA, 
 HIST_MATRICULA_ALUNO_DISCIPL_CURSO HMA, 
 HIST_CURSO_UNIDADE HCU,
@@ -966,22 +758,22 @@ AND ET.COD_MUNICIPIO  = ET.COD_MUNICIPIO
 AND (ET.DATA_EXCLUSAO IS NULL OR  ET.DATA_EXCLUSAO > SYSDATE)
 ORDER BY A.NOME_ALUNO;
 
-CREATE OR REPLACE TRG_ALUNO_CURSO
+CREATE OR REPLACE TRIGGER TRG_ALUNO_CURSO
 BEFORE INSERT OR UPDATE ON HISTORICO_MATRICULA_ALUNO
 FOR EACH ROW
 
 DECLARE
-V_MUNICIPIO_CURSO ENDERCO_UNIDADE.COD_MUNICIPIO%TYPE;
-V_MUNICIPIO_ALUNO ENDERCO_ALUNO.COD_MUNICIPIO%TYPE;
-V_ESTADO_ALUNO ENDERCO_ALUNO.COD_ESTADO%TYPE;
-V_ESTADO_CURSO ENDERCO_UNIDADE.COD_ESTADO%TYPE;
+V_MUNICIPIO_CURSO NUMBER(10);
+V_MUNICIPIO_ALUNO NUMBER(10);
+V_ESTADO_ALUNO VARCHAR2(2);
+V_ESTADO_CURSO VARCHAR2(2);
 
 BEGIN
 
 IF (INSERTING OR UPDATING) THEN
 BEGIN
 
-SELECT COD_MUNICIPIO, COD_ESTADO INTO V_MUNICIPIO_ALUNO, V_ESTADO_ALUNO  FROM ENDERCO_ALUNO EA WHERE EA.COD_ALUNO = :NEW.ALUNO
+SELECT COD_MUNICIPIO, COD_ESTADO INTO V_MUNICIPIO_ALUNO, V_ESTADO_ALUNO  FROM ENDERECO_ALUNO EA WHERE EA.COD_ALUNO = :NEW.ALUNO
 AND (EA.DATA_EXCLUSAO IS NULL OR  EA.DATA_EXCLUSAO > SYSDATE);
 
 SELECT COD_MUNICIPIO, COD_ESTADO INTO V_MUNICIPIO_CURSO, V_ESTADO_CURSO  FROM ENDERCO_UNIDADE EU, HIST_CURSO_UNIDADE HCU WHERE HCU.COD_CURSO = :NEW.COD_CURSO
@@ -1007,7 +799,7 @@ raise_application_error(-200007, 'Erro HISTORICO_MATRICULA_ALUNO '||sqlerrm);
 END;
 
 
-CREATE OR REPLACE TRG_ALUNO_TUTOR
+CREATE OR REPLACE TRIGGER TRG_ALUNO_TUTOR
 BEFORE INSERT OR UPDATE ON HIST_ALUNO_DISCIPL_CURSO_TUTOR
 FOR EACH ROW
 
@@ -1045,7 +837,7 @@ raise_application_error(-200007, 'Erro HIST_ALUNO_DISCIPL_CURSO_TUTOR '||sqlerrm
 END;
 
 
-CREATE OR REPLACE TRG_LIMITE_ALUNOS_CURSO
+CREATE OR REPLACE TRIGGER TRG_LIMITE_ALUNOS_CURSO
 BEFORE INSERT OR UPDATE ON HISTORICO_MATRICULA_ALUNO
 FOR EACH ROW
 
