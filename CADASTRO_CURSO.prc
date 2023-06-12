@@ -1,7 +1,6 @@
-CREATE OR REPLACE PROCEDURE CADASTRO_CURSO(COD_CURSO     IN CURSO.COD_CURSO%TYPE,
-                                           DESC_CURSO    IN CURSO.DESC_CURSO%TYPE,
-                                           DATA_INCLUSAO IN CURSO.DATA_INCLUSAO%TYPE,
-                                           DATA_EXCLUSAO IN CURSO.DATA_EXCLUSAO%TYPE) IS
+CREATE OR REPLACE PROCEDURE CADASTRO_CURSO(P_DESC_CURSO    IN CURSO.DESC_CURSO%TYPE,
+                                           P_DATA_INCLUSAO IN CURSO.DATA_INCLUSAO%TYPE,
+                                           P_DATA_EXCLUSAO IN CURSO.DATA_EXCLUSAO%TYPE) IS
 
 BEGIN
 
@@ -17,7 +16,7 @@ BEGIN
            P_DESC_CURSO,
            P_DATA_INCLUSAO,
            P_DATA_EXCLUSAO,
-           GET_USUARIO_SISTEMA,
+           USER,
            SYSDATE,
            0
       FROM CURSO
@@ -28,6 +27,4 @@ EXCEPTION
   WHEN OTHERS THEN
     ROLLBACK;
     raise_application_error(-200007, 'Erro CURSO ' || sqlerrm);
-END;
-
 END CADASTRO_CURSO;

@@ -1,5 +1,4 @@
-CREATE OR REPLACE PROCEDURE CADASTRO_ALUNO(P_COD_ALUNO       IN ALUNO.COD_ALUNO%TYPE,
-                                           P_NOME_ALUNO      IN ALUNO.NOME_ALUNO%TYPE,
+CREATE OR REPLACE PROCEDURE CADASTRO_ALUNO(P_NOME_ALUNO      IN ALUNO.NOME_ALUNO%TYPE,
                                            P_DATA_NASCIMENTO IN ALUNO.DATA_NASCIMENTO%TYPE,
                                            P_CPF             IN ALUNO.CPF%TYPE,
                                            P_NOME_MAE        IN ALUNO.NOME_MAE%TYPE,
@@ -26,7 +25,7 @@ BEGIN
            P_NOME_MAE,
            P_DATA_INCLUSAO,
            P_DATA_EXCLUSAO,
-           GET_USUARIO_SISTEMA,
+           USER,
            SYDATE,
            0
       FROM ALUNO
@@ -37,6 +36,4 @@ EXCEPTION
   WHEN OTHERS THEN
     ROLLBACK;
     raise_application_error(-200007, 'Erro ALUNO ' || sqlerrm);
-END;
-
 END CADASTRO_ALUNO;
